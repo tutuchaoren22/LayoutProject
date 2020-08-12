@@ -1,155 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:paddingLeft="48dp"
+    android:paddingRight="48dp"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@mipmap/logo"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            />
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/logo_of_aware"
+            android:src="@mipmap/logo" />
+    </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/input"
+
+    <LinearLayout
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="68sp"
-            android:orientation="vertical">
+            android:autofillHints="@string/username"
+            android:background="@drawable/edittext_border"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:padding="12dp"
+            android:paddingStart="24dp"
+            android:paddingLeft="24dp" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:autofillHints="@string/username"
-                android:background="@drawable/edittext_border"
-                android:hint="@string/username"
-                android:inputType="text"
-                android:padding="12sp"
-                android:paddingStart="24sp"
-                android:paddingLeft="24sp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="24sp"
-                android:autofillHints="@string/password"
-                android:background="@drawable/edittext_border"
-                android:hint="@string/password"
-                android:inputType="textPassword"
-                android:padding="12sp"
-                android:paddingStart="24sp"
-                android:paddingLeft="24sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/attention"
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:orientation="horizontal">
+            android:layout_marginTop="24sp"
+            android:autofillHints="@string/password"
+            android:background="@drawable/edittext_border"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:paddingStart="24dp"
+            android:paddingLeft="24dp" />
+    </LinearLayout>
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@null"
-                android:layout_marginStart="-6dp"
-                android:layout_marginLeft="-6dp" />
+    <LinearLayout
+        android:id="@+id/attention"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:orientation="horizontal"
+        android:textColor="#000000"
+        android:textSize="12sp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="17dp"
-                android:layout_gravity="center"
-                android:hint="@string/remember"
-                android:textColor="#000000"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="17dp"
-                android:layout_gravity="center"
-                android:hint="@string/forget"
-                android:textColor="#000000" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/loginbtn"
-            android:layout_width="match_parent"
+        <CheckBox
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="74sp"
-            android:background="@drawable/button_rounded_corners_dark"
-            android:text="@string/login"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF" />
+            android:layout_marginStart="-6dp"
+            android:layout_marginLeft="-6dp"
+            android:checked="true"
+            android:text="@null"
+            android:theme="@style/MyCheckBox" />
 
         <TextView
-            android:id="@+id/connect"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32sp"
-            android:gravity="center"
-            android:text="@string/connect"
-            android:textColor="#979797" />
+            android:text="@string/remember" />
 
-        <LinearLayout
-            android:id="@+id/icons"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="48sp"
-            android:orientation="horizontal">
+            android:layout_weight="1" />
 
-            <ImageButton
-                android:layout_width="135.5dp"
-                android:layout_height="44dp"
-                android:background="@drawable/button_rounded_corners_dark"
-                android:contentDescription="@string/facebook_logo"
-                android:scaleType="center"
-                android:src="@drawable/ic_facebook" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <ImageButton
-                android:layout_width="135.5dp"
-                android:layout_height="44dp"
-                android:background="@drawable/button_rounded_corners_light"
-                android:contentDescription="@string/twitter_logo"
-                android:scaleType="center"
-                android:src="@drawable/ic_twitter" />
-        </LinearLayout>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="100sp"
-            android:background="@drawable/button_rounded_corners_no_bg"
-            android:text="@string/emil"
-            android:textAllCaps="false"
-            android:textColor="#3B5998" />
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forget" />
     </LinearLayout>
+
+
+    <Button
+        android:id="@+id/loginbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="74dp"
+        android:background="@drawable/button_rounded_corners_dark"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/connect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="@string/connect"
+        android:textColor="#979797"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/icons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48sp"
+        android:layout_marginBottom="48sp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_rounded_corners_dark"
+            android:contentDescription="@string/facebook_logo"
+            android:paddingLeft="60dp"
+            android:paddingTop="8dp"
+            android:paddingRight="60dp"
+            android:paddingBottom="8dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_facebook" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_rounded_corners_light"
+            android:contentDescription="@string/twitter_logo"
+            android:paddingLeft="60dp"
+            android:paddingTop="8dp"
+            android:paddingRight="60dp"
+            android:paddingBottom="8dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_twitter" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/button_rounded_corners_no_bg"
+        android:paddingLeft="64dp"
+        android:paddingTop="11dp"
+        android:paddingRight="64dp"
+        android:paddingBottom="11dp"
+        android:text="@string/emil"
+        android:textAllCaps="false"
+        android:textColor="#3B5998"
+        android:textSize="16sp" />
+
 </LinearLayout>
