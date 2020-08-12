@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">LayoutProject</string>
+    <string name="aware">aware</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="remember">Remember me</string>
+    <string name="forget">Forget password?</string>
+    <string name="login">Login</string>
+    <string name="connect">or connect with</string>
+    <string name="emil">Sign Up with E-mail</string>
 </resources>
