@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">LayoutProject</string>
-    <string name="aware">aware</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="remember">Remember me</string>
