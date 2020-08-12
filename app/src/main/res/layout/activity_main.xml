@@ -65,17 +65,28 @@
             android:layout_marginTop="16sp"
             android:orientation="horizontal">
 
-            <TextView
+            <CheckBox
                 android:layout_width="wrap_content"
-                android:layout_height="17dp"
-                android:layout_gravity="center"
-                android:hint="@string/remember" />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="17dp"
-                android:layout_gravity="end"
-                android:hint="@string/forget" />
+                android:layout_gravity="center"
+                android:hint="@string/remember"
+                android:textColor="#444444" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:hint="@string/forget"
+                android:layout_gravity="center"
+                android:textColor="#444444" />
         </LinearLayout>
 
         <Button
@@ -94,7 +105,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32sp"
             android:gravity="center"
-            android:text="@string/connect" />
+            android:text="@string/connect"
+            android:textColor="#979797" />
 
         <LinearLayout
             android:id="@+id/icons"
