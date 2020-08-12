@@ -29,20 +29,28 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="@string/username"
             android:autofillHints="@string/username"
-            android:inputType="text" />
+            android:background="@drawable/edittext_border"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:padding="12sp"
+            android:paddingStart="24sp"
+            android:paddingLeft="24sp" />
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="24sp"
-            android:hint="@string/password"
             android:autofillHints="@string/password"
-            android:inputType="textPassword" />
+            android:background="@drawable/edittext_border"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="12sp"
+            android:paddingLeft="24sp"
+            android:paddingStart="24sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -70,10 +78,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="74sp"
-        android:textColor="#FFFFFF"
         android:background="@drawable/button_rounded_corners_dark"
         android:text="@string/login"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/connect"
@@ -94,28 +102,27 @@
         <Button
             android:layout_width="135.5dp"
             android:layout_height="44dp"
-            android:background="@drawable/button_rounded_corners_dark"/>
+            android:background="@drawable/button_rounded_corners_dark" />
 
         <TextView
-
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
         <Button
             android:layout_width="135.5dp"
             android:layout_height="44dp"
-            android:background="@drawable/button_rounded_corners_light"/>
+            android:background="@drawable/button_rounded_corners_light" />
     </LinearLayout>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:layout_gravity="center"
         android:layout_marginTop="100sp"
+        android:background="@drawable/button_rounded_corners_no_bg"
         android:text="@string/emil"
-        android:textColor="#3B5998"
         android:textAllCaps="false"
-        android:background="@drawable/button_rounded_corners_no_bg"/>
+        android:textColor="#3B5998" />
 
 </LinearLayout>
