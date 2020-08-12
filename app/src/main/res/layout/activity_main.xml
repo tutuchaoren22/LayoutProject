@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginStart="48dp"
+    android:layout_marginEnd="48dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -11,83 +13,95 @@
         android:id="@+id/aware"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity=""
+        android:layout_gravity="center"
+        android:layout_marginTop="112sp"
         android:text="@string/aware"
         android:textColor="#3B5998"
-        android:textSize="30pt" />
+        android:textSize="35sp" />
 
     <LinearLayout
         android:id="@+id/input"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="68sp"
         android:orientation="vertical">
 
         <EditText
-            android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:hint="@string/username" />
 
         <EditText
-            android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:layout_marginTop="24sp"
             android:hint="@string/password" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/attention"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="16sp"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
             android:layout_gravity="center"
             android:hint="@string/remember" />
 
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_gravity="end"
             android:hint="@string/forget" />
     </LinearLayout>
 
     <Button
         android:id="@+id/loginbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74sp"
+        android:text="@string/login" />
 
     <TextView
         android:id="@+id/connect"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/connect"/>
+        android:layout_marginTop="32sp"
+        android:gravity="center"
+        android:text="@string/connect" />
 
     <LinearLayout
         android:id="@+id/icons"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="48sp"
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="135.5dp"
+            android:layout_height="44dp" />
+        <TextView
 
-        <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <Button
+            android:layout_width="135.5dp"
+            android:layout_height="44dp"/>
     </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/emil"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icons"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="100sp"/>
 
 </LinearLayout>
