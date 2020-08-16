@@ -1,163 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
-    android:paddingLeft="48dp"
-    android:paddingRight="48dp"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:contentDescription="@string/logo_of_aware"
-            android:src="@mipmap/logo" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/input"
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/logo_line"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="@string/username"
-            android:background="@drawable/edittext_border"
-            android:hint="@string/username"
-            android:inputType="text"
-            android:padding="12dp"
-            android:paddingLeft="24dp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:autofillHints="@string/password"
-            android:background="@drawable/edittext_border"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:padding="12dp"
-            android:paddingLeft="24dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/attention"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:orientation="horizontal"
-        android:textColor="@color/black"
-        android:textSize="12sp">
+        app:layout_constraintGuide_percent="0.16" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="-6dp"
-            android:layout_marginLeft="-6dp"
-            android:checked="true"
-            android:text="@null"
-            android:theme="@style/MyCheckBox" />
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/logo_of_aware"
+        android:src="@mipmap/logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_line" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/remember" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/name_input_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+    <EditText
+        android:id="@+id/pass_word_input"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_with_parent"
+        android:layout_marginHorizontal="@dimen/margin_with_parent"
+        android:autofillHints="@string/username"
+        android:background="@drawable/edittext_border"
+        android:hint="@string/username"
+        android:inputType="text"
+        android:paddingLeft="@dimen/input_padding_left"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_input_line" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/forget" />
-    </LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/psw_input_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.37" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_with_parent"
+        android:layout_marginHorizontal="50dp"
+        android:autofillHints="@string/username"
+        android:background="@drawable/edittext_border"
+        android:hint="@string/password"
+        android:inputType="text"
+        android:paddingLeft="@dimen/input_padding_left"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/psw_input_line" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hint_msg_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/checkbox_margin_with_parent"
+        android:checked="true"
+        android:theme="@style/MyCheckBox"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hint_msg_line" />
+
+    <TextView
+        android:id="@+id/remember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/remember"
+        app:layout_constraintBaseline_toBaselineOf="@+id/checkbox"
+        app:layout_constraintLeft_toRightOf="@id/checkbox" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forget"
+        app:layout_constraintBaseline_toBaselineOf="@id/remember"
+        app:layout_constraintRight_toRightOf="@id/pass_word_input" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/login_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
 
     <Button
-        android:id="@+id/loginbtn"
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginTop="74dp"
+        android:layout_marginHorizontal="@dimen/margin_with_parent"
         android:background="@drawable/button_rounded_corners_dark"
         android:text="@string/login"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textSize="@dimen/text_size_default"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_line" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/connect_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
 
     <TextView
-        android:id="@+id/connect"
-        android:layout_width="match_parent"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
         android:text="@string/connect"
-        android:textColor="@color/light_gray"
-        android:textSize="12sp" />
+        android:textSize="@dimen/text_size_default"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/connect_line" />
 
-    <LinearLayout
-        android:id="@+id/icons"
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/login_other_line"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="48dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.73" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_rounded_corners_dark"
-            android:contentDescription="@string/facebook_logo"
-            android:paddingLeft="60dp"
-            android:paddingTop="8dp"
-            android:paddingRight="60dp"
-            android:paddingBottom="8dp"
-            android:scaleType="center"
-            android:src="@drawable/ic_facebook" />
+    <ImageButton
+        android:id="@+id/facebook"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/twitter_height"
+        android:layout_marginEnd="@dimen/margin_of_two_button"
+        android:layout_marginRight="@dimen/margin_of_two_button"
+        android:background="@drawable/button_rounded_corners_dark"
+        android:contentDescription="@string/facebook_logo"
+        android:src="@drawable/ic_facebook"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="@id/login"
+        app:layout_constraintRight_toLeftOf="@id/twitter"
+        app:layout_constraintTop_toBottomOf="@id/login_other_line" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+    <ImageButton
+        android:id="@+id/twitter"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/twitter_height"
+        android:layout_marginStart="@dimen/margin_of_two_button"
+        android:layout_marginLeft="@dimen/margin_of_two_button"
+        android:background="@drawable/button_rounded_corners_light"
+        android:contentDescription="@string/twitter_logo"
+        android:src="@drawable/ic_twitter"
+        app:layout_constraintLeft_toRightOf="@id/facebook"
+        app:layout_constraintRight_toRightOf="@id/login"
+        app:layout_constraintTop_toBottomOf="@id/login_other_line" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_rounded_corners_light"
-            android:contentDescription="@string/twitter_logo"
-            android:paddingLeft="60dp"
-            android:paddingTop="8dp"
-            android:paddingRight="60dp"
-            android:paddingBottom="8dp"
-            android:scaleType="center"
-            android:src="@drawable/ic_twitter" />
-    </LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/email_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.91" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
         android:background="@drawable/button_rounded_corners_no_bg"
-        android:paddingLeft="64dp"
-        android:paddingTop="11dp"
-        android:paddingRight="64dp"
-        android:paddingBottom="11dp"
         android:text="@string/emil"
         android:textAllCaps="false"
         android:textColor="@color/dark_blue"
-        android:textSize="16sp" />
-
-</LinearLayout>
+        android:textSize="@dimen/text_size_default"
+        app:layout_constraintLeft_toLeftOf="@id/login"
+        app:layout_constraintRight_toRightOf="@id/login"
+        app:layout_constraintTop_toBottomOf="@id/email_line" />
+</androidx.constraintlayout.widget.ConstraintLayout>
